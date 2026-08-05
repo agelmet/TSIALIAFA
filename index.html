@@ -9,7 +9,7 @@
 <meta property="og:title" content="Dr. Τσιαλιάφα Ελένη DDS, MSc | Οδοντίατρος Αλεξανδρούπολη">
 <meta property="og:description" content="Εξειδικευμένη αισθητική οδοντιατρική & προσθετική υψηλών προδιαγραφών στην Αλεξανδρούπολη.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/agelmet/TSIALIAFA/main/666666.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -495,6 +495,99 @@ section{position:relative}
   .rev-divider{display:none}
   .sec{padding:70px 20px}
 }
+
+/* ============================================================
+   REFINEMENT LAYER  —  visual polish only (no palette changes)
+   ============================================================ */
+
+/* --- section rhythm --- */
+.sec-head .eyebrow span:last-child{position:relative}
+.sec-head h2{position:relative}
+.sec-head.center h2::after,.sec-head:not(.center) h2::after{
+  content:'';display:block;width:54px;height:1px;margin-top:26px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+}
+.sec-head.center h2::after{margin-left:auto;margin-right:auto;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);width:90px}
+
+/* --- hero: deeper cinematic veil + slow drift --- */
+.hero-bg::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 20% 30%,rgba(28,30,34,.18),rgba(28,30,34,.72) 70%,rgba(28,30,34,.9));
+  pointer-events:none}
+.hero-bg img{animation:heroDrift 26s ease-in-out infinite alternate}
+@keyframes heroDrift{from{transform:scale(1.06)}to{transform:scale(1.13)}}
+.hero-badge{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* --- trust strip: gradient fade at the edges --- */
+.trust-strip::before,.trust-strip::after{content:'';position:absolute;top:0;bottom:0;width:14vw;z-index:2;pointer-events:none}
+.trust-strip::before{left:0;background:linear-gradient(90deg,var(--grey-900),transparent)}
+.trust-strip::after{right:0;background:linear-gradient(270deg,var(--grey-900),transparent)}
+
+/* --- service cards: editorial upgrade --- */
+.service-card{border-radius:16px;min-height:460px;
+  transition:transform .7s var(--ease),box-shadow .7s var(--ease),border-color .5s var(--ease)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;z-index:4;
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{border-color:rgba(184,168,143,.5)}
+.service-card-img{height:250px}
+.service-card-img img{filter:grayscale(.22) brightness(.95) contrast(1.03)}
+.service-card-img::after{background:linear-gradient(to top,rgba(28,30,34,.62),rgba(28,30,34,.05) 55%,transparent)}
+.service-card-num{top:20px;right:22px;font-size:2.1rem;font-weight:500;color:rgba(255,255,255,.42);
+  letter-spacing:-.02em;transition:color .5s var(--ease)}
+.service-card:hover .service-card-num{color:var(--gold-soft)}
+.service-card-icon{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.94);
+  box-shadow:0 8px 24px rgba(28,30,34,.14)}
+.service-card-body{padding:30px 30px 32px}
+.service-card-body h3{font-size:1.62rem;letter-spacing:-.005em}
+.service-card-link{padding-top:16px;border-top:1px solid var(--line-soft);width:100%}
+
+/* --- services index page --- */
+.services-index{padding-top:clamp(70px,8vw,110px)}
+.all-services-link{display:inline-flex;align-items:center;gap:12px;margin-top:26px;cursor:pointer;
+  font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);
+  padding:13px 26px;border:1px solid var(--line);border-radius:40px;background:var(--white);
+  transition:all .45s var(--ease)}
+.all-services-link:hover{border-color:var(--gold);color:var(--ink);gap:18px;box-shadow:var(--shadow-sm)}
+.all-services-link svg{width:16px;height:16px}
+.svc-cta-band{background:var(--grey-900);text-align:center;padding-top:100px;padding-bottom:100px}
+.svc-cta-band h2{font-family:var(--serif);font-size:clamp(2.1rem,4.6vw,3.4rem);color:#fff;font-weight:500;
+  line-height:1.1;margin-bottom:22px;max-width:820px;margin-left:auto;margin-right:auto}
+.svc-cta-band h2 em{font-style:italic;color:var(--gold-soft)}
+.svc-cta-band p{color:var(--grey-300);font-size:1.06rem;max-width:600px;margin:0 auto 40px;font-weight:300}
+.svc-cta-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+
+/* --- feature band + clinic cards --- */
+.feature-band{border-radius:18px}
+.feature-cell{transition:background .5s var(--ease)}
+.feature-cell:hover{background:var(--white)}
+.other-service-mini{border-radius:14px}
+
+/* --- detail hero: stronger typographic hierarchy --- */
+.detail-hero{min-height:64vh}
+.detail-hero-bg img{filter:grayscale(.42) brightness(.46) contrast(1.05)}
+.detail-hero-bg::after{background:linear-gradient(to top,rgba(28,30,34,.94),rgba(28,30,34,.38))}
+.detail-hero h1{text-wrap:balance}
+
+/* --- about tags --- */
+.about-tag{transition:all .4s var(--ease)}
+.about-tag:hover{border-color:var(--gold);color:var(--ink)}
+
+/* --- accessibility & motion --- */
+:where(a,button,[data-route],input,select,textarea):focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .hero-bg img{animation:none;transform:scale(1.06)}
+}
+@media(max-width:768px){
+  .sec-head.center h2::after{width:64px}
+  .service-card{min-height:0}
+  .service-card-img{height:210px}
+}
+
 </style>
 </head>
 <body>
@@ -510,7 +603,7 @@ section{position:relative}
 
 <nav class="nav" id="nav">
   <div class="nav-logo" data-route="home">
-    <img src="https://github.com/agelmet/TSIALIAFA/blob/main/IMG_4558.png?raw=true" alt="Τσιαλιάφα Dental Care" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <img src="IMG_4558.png" alt="Τσιαλιάφα Dental Care" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="nav-logo-fallback" style="display:none">
       <svg class="nav-logo-mark" viewBox="0 0 60 60"><path d="M30 8 C22 8 18 14 18 22 C18 34 24 44 30 52 C36 44 42 34 42 22 C42 14 38 8 30 8 Z" fill="none" stroke="#5b666d" stroke-width="1.5"/><circle cx="30" cy="26" r="6" fill="none" stroke="#b8a88f" stroke-width="1.5"/></svg>
       <div class="nav-logo-txt"><div class="nm">Τσιαλιάφα</div><div class="sub">Dental Care</div></div>
@@ -519,7 +612,7 @@ section{position:relative}
   <div class="nav-links">
     <a class="nav-link active" data-route="home" data-i18n="nav_home">Αρχική</a>
     <a class="nav-link" data-route="about" data-i18n="nav_about">Προφίλ</a>
-    <a class="nav-link" data-route="general" data-i18n="nav_services">Υπηρεσίες</a>
+    <a class="nav-link" data-route="services" data-i18n="nav_services">Υπηρεσίες</a>
     <a class="nav-link" data-route="clinic" data-i18n="nav_clinic">Ιατρείο</a>
     <a class="nav-link" data-route="contact" data-i18n="nav_contact">Επικοινωνία</a>
   </div>
@@ -538,7 +631,7 @@ section{position:relative}
   <div class="mobile-links">
     <a class="mobile-link" data-route="home" data-i18n="nav_home">Αρχική</a>
     <a class="mobile-link" data-route="about" data-i18n="nav_about">Προφίλ</a>
-    <a class="mobile-link" data-route="general" data-i18n="nav_services">Υπηρεσίες</a>
+    <a class="mobile-link" data-route="services" data-i18n="nav_services">Υπηρεσίες</a>
     <a class="mobile-link" data-route="clinic" data-i18n="nav_clinic">Ιατρείο</a>
     <a class="mobile-link" data-route="reviews" data-i18n="nav_reviews">Κριτικές</a>
     <a class="mobile-link" data-route="contact" data-i18n="nav_contact">Επικοινωνία</a>
@@ -554,14 +647,14 @@ section{position:relative}
 
 <main class="page is-active" id="page-home">
   <section class="hero">
-    <div class="hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg" alt="Οδοντιατρείο Τσιαλιάφα"></div>
+    <div class="hero-bg"><img src="666666.jpg" alt="Οδοντιατρείο Τσιαλιάφα"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow"><span class="line"></span><span data-i18n="hero_eyebrow">Οδοντίατρος · Προσθετολόγος · Αλεξανδρούπολη</span></div>
       <h1><span class="l"><span data-i18n="hero_t1">Dr. Ελένη</span></span><span class="l"><span><em data-i18n="hero_t2">Τσιαλιάφα</em></span></span></h1>
       <div class="hero-role" data-i18n="hero_role">DDS, MSc — Χειρουργός Οδοντίατρος</div>
       <p class="hero-desc" data-i18n="hero_desc">Εξειδικευμένη αισθητική οδοντιατρική και προσθετική υψηλών προδιαγραφών, με ανώδυνες θεραπείες και ανθρώπινη φροντίδα στην καρδιά της Αλεξανδρούπολης.</p>
       <div class="hero-actions">
-        <a class="btn-primary" data-route="general"><span data-i18n="hero_cta1">Οι Υπηρεσίες μας</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn-primary" data-route="services"><span data-i18n="hero_cta1">Οι Υπηρεσίες μας</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn-ghost" data-route="contact"><span data-i18n="hero_cta2">Κλείστε Ραντεβού</span></a>
       </div>
     </div>
@@ -589,8 +682,8 @@ section{position:relative}
       <div class="about-grid">
         <div class="about-visual reveal-l">
           <div class="about-deco"></div>
-          <div class="about-img-wrap lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/33333.jpg">
-            <img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/33333.jpg" alt="Dr. Ελένη Τσιαλιάφα">
+          <div class="about-img-wrap lightbox-trigger" data-img="33333.jpg">
+            <img src="33333.jpg" alt="Dr. Ελένη Τσιαλιάφα">
           </div>
           <div class="about-badge-float"><div class="yr">1<sup style="font-size:.5em">η</sup></div><div class="tx" data-i18n="about_badge">Σειρά Κατάταξης Πτυχίου ΑΠΘ</div></div>
         </div>
@@ -619,27 +712,27 @@ section{position:relative}
       </div>
       <div class="services-grid stagger">
         <div class="service-card" data-route="general">
-          <div class="service-card-img"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg" alt="Γενική Οδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5.5c-2-2-5-2-6.5 0S4 11 6 15c1 2 1.5 4 3 4s1.5-3 3-3 1.5 3 3 3 2-2 3-4c2-4 1-7.5-.5-9.5s-4.5-1.5-6.5.5z"/></svg></div><div class="service-card-num">01</div></div>
+          <div class="service-card-img"><img src="44444.jpg" alt="Γενική Οδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5.5c-2-2-5-2-6.5 0S4 11 6 15c1 2 1.5 4 3 4s1.5-3 3-3 1.5 3 3 3 2-2 3-4c2-4 1-7.5-.5-9.5s-4.5-1.5-6.5.5z"/></svg></div><div class="service-card-num">01</div></div>
           <div class="service-card-body"><h3 data-i18n="sc1_title">Γενική Οδοντιατρική</h3><p data-i18n="sc1_desc">Καθαρισμός, σφραγίσματα, απονευρώσεις και εξαγωγές με ανώδυνες θεραπείες υπό τοπική αναισθησία.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         </div>
         <div class="service-card" data-route="aesthetic">
-          <div class="service-card-img"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/222222.jpg" alt="Αισθητική Οδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6L21 9l-5 4 2 7-6-4-6 4 2-7-5-4 6.5 0z"/></svg></div><div class="service-card-num">02</div></div>
+          <div class="service-card-img"><img src="222222.jpg" alt="Αισθητική Οδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6L21 9l-5 4 2 7-6-4-6 4 2-7-5-4 6.5 0z"/></svg></div><div class="service-card-num">02</div></div>
           <div class="service-card-body"><h3 data-i18n="sc2_title">Αισθητική &amp; Προσθετική</h3><p data-i18n="sc2_desc">Ακίνητη προσθετική, στεφάνες, γέφυρες και αποκαταστάσεις επί εμφυτευμάτων υψηλών προδιαγραφών.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         </div>
         <div class="service-card" data-route="pedo">
-          <div class="service-card-img"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg" alt="Παιδοδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 106 0M8 3a4 4 0 018 0M6 21c0-4 2.5-7 6-7s6 3 6 7"/></svg></div><div class="service-card-num">03</div></div>
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-pedo.jpg" alt="Παιδοδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 106 0M8 3a4 4 0 018 0M6 21c0-4 2.5-7 6-7s6 3 6 7"/></svg></div><div class="service-card-num">03</div></div>
           <div class="service-card-body"><h3 data-i18n="sc3_title">Παιδοδοντιατρική</h3><p data-i18n="sc3_desc">Φθορίωση, προληπτικές εμφράξεις και φιλική φροντίδα για τα παιδικά χαμόγελα σε ένα ασφαλές περιβάλλον.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         </div>
         <div class="service-card" data-route="face">
-          <div class="service-card-img"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/44444.jpg" alt="Αισθητική Προσώπου"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9c0 4 3 7 5 8M12 3a9 9 0 019 9c0 4-3 7-5 8M9 10h.01M15 10h.01M9 15c1 1 5 1 6 0"/></svg></div><div class="service-card-num">04</div></div>
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-face.jpg" alt="Αισθητική Προσώπου"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9c0 4 3 7 5 8M12 3a9 9 0 019 9c0 4-3 7-5 8M9 10h.01M15 10h.01M9 15c1 1 5 1 6 0"/></svg></div><div class="service-card-num">04</div></div>
           <div class="service-card-body"><h3 data-i18n="sc4_title">Αισθητική Προσώπου</h3><p data-i18n="sc4_desc">Botox και Dermal Fillers για φυσικό, διακριτικό αποτέλεσμα — πιστοποίηση από FERA Greece.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         </div>
         <div class="service-card" data-route="tmj">
-          <div class="service-card-img"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg" alt="Νάρθηκες"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M4 8c0-2 2-4 4-4h8c2 0 4 2 4 4M4 8v4c0 4 3 8 8 8s8-4 8-8V8M8 12h8"/></svg></div><div class="service-card-num">05</div></div>
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-splint.jpg" alt="Νάρθηκες"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M4 8c0-2 2-4 4-4h8c2 0 4 2 4 4M4 8v4c0 4 3 8 8 8s8-4 8-8V8M8 12h8"/></svg></div><div class="service-card-num">05</div></div>
           <div class="service-card-body"><h3 data-i18n="sc5_title">Νάρθηκες &amp; Κροταφογναθική</h3><p data-i18n="sc5_desc">Εξειδικευμένη αντιμετώπιση για το τρίξιμο των δοντιών και τον πόνο στις αρθρώσεις.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         </div>
         <div class="service-card" data-route="surgery">
-          <div class="service-card-img"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg" alt="Χειρουργική Στόματος"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-9 9-6 0 0-6z M12 6l6 6"/></svg></div><div class="service-card-num">06</div></div>
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-surgery.jpg" alt="Χειρουργική Στόματος"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-9 9-6 0 0-6z M12 6l6 6"/></svg></div><div class="service-card-num">06</div></div>
           <div class="service-card-body"><h3 data-i18n="sc6_title">Ειδικές Θεραπείες</h3><p data-i18n="sc6_desc">Χειρουργικές εξαγωγές εγκλείστων φρονιμιτών και εξειδικευμένες επεμβάσεις με ασφάλεια.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         </div>
       </div>
@@ -712,7 +805,7 @@ section{position:relative}
 </main>
 <main class="page" id="page-about">
   <section class="detail-hero">
-    <div class="detail-hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/44444.jpg" alt=""></div>
+    <div class="detail-hero-bg"><img src="44444.jpg" alt=""></div>
     <div class="detail-hero-inner">
       <a class="detail-back" data-route="home"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">Αρχική</span></a>
       <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="about_tag">Το Προφίλ</span></div>
@@ -728,20 +821,22 @@ section{position:relative}
             <p data-i18n="about_full1">Η χειρουργός οδοντίατρος / προσθετολόγος <strong>Τσιαλιάφα Ελένη</strong> αποφοίτησε από την Οδοντιατρική του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης το 2015 με σειρά κατάταξης πρώτη — μια ιδιαίτερη διάκριση, καθώς είχε την τιμή να δώσει τον όρκο εκ μέρους των αποφοίτων.</p>
             <p data-i18n="about_full2">Έπειτα εισήχθη στο πρόγραμμα μεταπτυχιακών σπουδών του ίδιου πανεπιστημίου, όπου εξειδικεύτηκε επί <strong>τριετία</strong> στην κατεύθυνση της προσθετικής. Πλέον διατηρεί ιδιωτικό οδοντιατρείο στην πόλη της Αλεξανδρούπολης, με κύρια έμφαση στην παροχή εξειδικευμένης αισθητικής οδοντιατρικής και προσθετικής υψηλών προδιαγραφών.</p>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/44444.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/44444.jpg" alt="Η Ελένη Τσιαλιάφα στο ιατρείο"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="44444.jpg"><img src="44444.jpg" alt="Η Ελένη Τσιαλιάφα στο ιατρείο"></div>
           <div class="explainer reveal"><h4 data-i18n="prosth_title">Τι είναι ο προσθετολόγος;</h4><p data-i18n="prosth_desc">Ο προσθετολόγος είναι ο οδοντίατρος που εξειδικεύεται στην αποκατάσταση και αντικατάσταση των δοντιών. Ασχολείται με στεφάνες, γέφυρες, τεχνητές οδοντοστοιχίες και αποκαταστάσεις επί εμφυτευμάτων, με στόχο την πλήρη αποκατάσταση τόσο της λειτουργίας όσο και της αισθητικής του χαμόγελου. Είναι, με απλά λόγια, ο «αρχιτέκτονας» του νέου σας χαμόγελου.</p></div>
           <h3 class="reveal" data-i18n="about_cert_title">Επιστημονική κατάρτιση</h3>
           <div class="reveal">
             <p data-i18n="about_full3">Η επιστημονική της κατάρτιση εμπλουτίζεται με την πιστοποίηση εφαρμογής <strong>Botox και Dermal Fillers</strong> από τη FERA Greece (Facial Esthetic and Rejuvenation Academy of Greece). Είναι ενεργό μέλος της <strong>Ελληνικής Προσθετικής Εταιρείας</strong> και της <strong>ITI (International Team for Implantology)</strong>.</p>
+            <p data-i18n="about_implant">Εκπαιδεύτηκε επιπλέον στη <strong>χειρουργική των εμφυτευμάτων</strong> στην Κλινική Στοματικής και Γναθοπροσωπικής Χειρουργικής του <strong>Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης</strong>.</p>
             <p data-i18n="about_full4">Στο ιατρείο της συνεργάζεται με τη μητέρα της, οδοντίατρο <strong>Φωτεινή Μαυροπούλου</strong>, η οποία διαθέτει εμπειρία άνω των τριάντα ετών στον τομέα της Οδοντιατρικής. Στην καρδιά του κέντρου της Αλεξανδρούπολης θα βρείτε τον συγκερασμό μεγάλης εμπειρίας, καινοτομίας και νέας γνώσης — με κοινό γνώμονα τη βέλτιστη οδοντιατρική θεραπεία για το όφελος του ασθενή.</p>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/33333.jpg" style="aspect-ratio:4/3"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/33333.jpg" alt="Dr. Ελένη Τσιαλιάφα"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="33333.jpg" style="aspect-ratio:4/3"><img src="33333.jpg" alt="Dr. Ελένη Τσιαλιάφα"></div>
           <div class="about-tags reveal">
             <span class="about-tag" data-i18n="tag1">Αριστούχος ΑΠΘ 2015</span>
             <span class="about-tag" data-i18n="tag2">MSc Προσθετική</span>
             <span class="about-tag" data-i18n="tag3">Μέλος ITI</span>
             <span class="about-tag" data-i18n="tag4">Ελληνική Προσθετική Εταιρεία</span>
             <span class="about-tag" data-i18n="tag5">Πιστοποίηση FERA Greece</span>
+            <span class="about-tag" data-i18n="tag6">Χειρουργική Εμφυτευμάτων ΑΠΘ</span>
           </div>
         </div>
         <aside class="detail-sidebar">
@@ -750,6 +845,7 @@ section{position:relative}
             <div class="sidebar-feature"><div class="sf-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><p data-i18n="side_f1">Αριστούχος απόφοιτος Οδοντιατρικής ΑΠΘ</p></div>
             <div class="sidebar-feature"><div class="sf-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><p data-i18n="side_f2">Μεταπτυχιακή εξειδίκευση στην προσθετική</p></div>
             <div class="sidebar-feature"><div class="sf-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><p data-i18n="side_f3">Πιστοποίηση Botox &amp; Dermal Fillers</p></div>
+            <div class="sidebar-feature"><div class="sf-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><p data-i18n="side_f5">Εκπαίδευση στη χειρουργική εμφυτευμάτων (ΑΠΘ)</p></div>
             <div class="sidebar-feature"><div class="sf-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><p data-i18n="side_f4">Συνεργασία με έμπειρη οδοντίατρο</p></div>
           </div>
         </aside>
@@ -758,7 +854,8 @@ section{position:relative}
   </section>
   <section class="detail-other-services">
     <div class="container">
-      <div class="sec-head center reveal" style="margin-bottom:0"><div class="eyebrow" style="justify-content:center"><span class="dot"></span><span data-i18n="explore">Εξερευνήστε</span></div><h2 data-i18n="explore_serv">Οι <em>υπηρεσίες</em> μας</h2></div>
+      <div class="sec-head center reveal" style="margin-bottom:0"><div class="eyebrow" style="justify-content:center"><span class="dot"></span><span data-i18n="explore">Εξερευνήστε</span></div><h2 data-i18n="explore_serv">Οι <em>υπηρεσίες</em> μας</h2>
+        <a class="all-services-link" data-route="services"><span data-i18n="all_services">Δείτε όλες τις υπηρεσίες</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       <div class="other-services-grid stagger">
         <div class="other-service-mini" data-route="general"><div class="osm-ic"><svg viewBox="0 0 24 24"><path d="M12 5.5c-2-2-5-2-6.5 0S4 11 6 15c1 2 1.5 4 3 4s1.5-3 3-3 1.5 3 3 3 2-2 3-4c2-4 1-7.5-.5-9.5s-4.5-1.5-6.5.5z"/></svg></div><div class="osm-txt"><h5 data-i18n="sc1_title">Γενική Οδοντιατρική</h5><span data-i18n="osm1">Καθαρισμός & σφραγίσματα</span></div></div>
         <div class="other-service-mini" data-route="aesthetic"><div class="osm-ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6L21 9l-5 4 2 7-6-4-6 4 2-7-5-4 6.5 0z"/></svg></div><div class="osm-txt"><h5 data-i18n="sc2_title">Αισθητική & Προσθετική</h5><span data-i18n="osm2">Στεφάνες & εμφυτεύματα</span></div></div>
@@ -767,11 +864,67 @@ section{position:relative}
     </div>
   </section>
 </main>
-<main class="page" id="page-general">
+<main class="page" id="page-services">
   <section class="detail-hero">
-    <div class="detail-hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg" alt=""></div>
+    <div class="detail-hero-bg"><img src="222222.jpg" alt=""></div>
     <div class="detail-hero-inner">
       <a class="detail-back" data-route="home"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">Αρχική</span></a>
+      <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="svc_tag">Υπηρεσίες</span></div>
+      <h1 data-i18n="svc_h1">Ολοκληρωμένη <em>οδοντιατρική φροντίδα</em></h1>
+    </div>
+  </section>
+  <section class="sec services-index">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <div class="eyebrow" style="justify-content:center"><span class="dot"></span><span data-i18n="svc_pick">Επιλέξτε υπηρεσία</span></div>
+        <h2 data-i18n="svc_index_title">Έξι τομείς, <em>μία φιλοσοφία</em></h2>
+        <p data-i18n="svc_index_sub">Κάθε υπηρεσία έχει τη δική της σελίδα με αναλυτική περιγραφή. Επιλέξτε τον τομέα που σας ενδιαφέρει για να μάθετε περισσότερα.</p>
+      </div>
+<div class="services-grid stagger">
+        <div class="service-card" data-route="general">
+          <div class="service-card-img"><img src="44444.jpg" alt="Γενική Οδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5.5c-2-2-5-2-6.5 0S4 11 6 15c1 2 1.5 4 3 4s1.5-3 3-3 1.5 3 3 3 2-2 3-4c2-4 1-7.5-.5-9.5s-4.5-1.5-6.5.5z"/></svg></div><div class="service-card-num">01</div></div>
+          <div class="service-card-body"><h3 data-i18n="sc1_title">Γενική Οδοντιατρική</h3><p data-i18n="sc1_desc">Καθαρισμός, σφραγίσματα, απονευρώσεις και εξαγωγές με ανώδυνες θεραπείες υπό τοπική αναισθησία.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+        <div class="service-card" data-route="aesthetic">
+          <div class="service-card-img"><img src="222222.jpg" alt="Αισθητική Οδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6L21 9l-5 4 2 7-6-4-6 4 2-7-5-4 6.5 0z"/></svg></div><div class="service-card-num">02</div></div>
+          <div class="service-card-body"><h3 data-i18n="sc2_title">Αισθητική &amp; Προσθετική</h3><p data-i18n="sc2_desc">Ακίνητη προσθετική, στεφάνες, γέφυρες και αποκαταστάσεις επί εμφυτευμάτων υψηλών προδιαγραφών.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+        <div class="service-card" data-route="pedo">
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-pedo.jpg" alt="Παιδοδοντιατρική"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 106 0M8 3a4 4 0 018 0M6 21c0-4 2.5-7 6-7s6 3 6 7"/></svg></div><div class="service-card-num">03</div></div>
+          <div class="service-card-body"><h3 data-i18n="sc3_title">Παιδοδοντιατρική</h3><p data-i18n="sc3_desc">Φθορίωση, προληπτικές εμφράξεις και φιλική φροντίδα για τα παιδικά χαμόγελα σε ένα ασφαλές περιβάλλον.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+        <div class="service-card" data-route="face">
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-face.jpg" alt="Αισθητική Προσώπου"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9c0 4 3 7 5 8M12 3a9 9 0 019 9c0 4-3 7-5 8M9 10h.01M15 10h.01M9 15c1 1 5 1 6 0"/></svg></div><div class="service-card-num">04</div></div>
+          <div class="service-card-body"><h3 data-i18n="sc4_title">Αισθητική Προσώπου</h3><p data-i18n="sc4_desc">Botox και Dermal Fillers για φυσικό, διακριτικό αποτέλεσμα — πιστοποίηση από FERA Greece.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+        <div class="service-card" data-route="tmj">
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-splint.jpg" alt="Νάρθηκες"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M4 8c0-2 2-4 4-4h8c2 0 4 2 4 4M4 8v4c0 4 3 8 8 8s8-4 8-8V8M8 12h8"/></svg></div><div class="service-card-num">05</div></div>
+          <div class="service-card-body"><h3 data-i18n="sc5_title">Νάρθηκες &amp; Κροταφογναθική</h3><p data-i18n="sc5_desc">Εξειδικευμένη αντιμετώπιση για το τρίξιμο των δοντιών και τον πόνο στις αρθρώσεις.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+        <div class="service-card" data-route="surgery">
+          <div class="service-card-img"><img loading="lazy" decoding="async" src="svc-surgery.jpg" alt="Χειρουργική Στόματος"><div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-9 9-6 0 0-6z M12 6l6 6"/></svg></div><div class="service-card-num">06</div></div>
+          <div class="service-card-body"><h3 data-i18n="sc6_title">Ειδικές Θεραπείες</h3><p data-i18n="sc6_desc">Χειρουργικές εξαγωγές εγκλείστων φρονιμιτών και εξειδικευμένες επεμβάσεις με ασφάλεια.</p><span class="service-card-link" data-i18n="read_more">Διαβάστε περισσότερα <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec svc-cta-band">
+    <div class="container reveal">
+      <div class="eyebrow" style="justify-content:center"><span class="dot" style="background:var(--gold-soft)"></span><span style="color:var(--gold-soft)" data-i18n="svc_cta_eyebrow">Δεν είστε σίγουροι;</span></div>
+      <h2 data-i18n="svc_cta_title">Ας βρούμε μαζί τη <em>σωστή θεραπεία</em></h2>
+      <p data-i18n="svc_cta_sub">Μια ολοκληρωμένη κλινική εκτίμηση είναι το πρώτο βήμα. Επικοινωνήστε μαζί μας και σχεδιάζουμε το πλάνο που ταιριάζει στην περίπτωσή σας.</p>
+      <div class="svc-cta-actions">
+        <a class="btn-primary" href="tel:2551033670"><span data-i18n="cta_btn1">Καλέστε μας</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+        <a class="btn-ghost" data-route="contact"><span data-i18n="cta_btn2">Φόρμα Επικοινωνίας</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<main class="page" id="page-general">
+  <section class="detail-hero">
+    <div class="detail-hero-bg"><img src="44444.jpg" alt=""></div>
+    <div class="detail-hero-inner">
+      <a class="detail-back" data-route="services"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back_services">Υπηρεσίες</span></a>
       <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="gen_tag">Υπηρεσία 01</span></div>
       <h1 data-i18n="gen_h1">Γενική <em>Οδοντιατρική</em></h1>
     </div>
@@ -791,7 +944,7 @@ section{position:relative}
               <li><span class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div class="li-txt"><strong data-i18n="gen_l4_t">Εξαγωγές Δοντιών</strong><span data-i18n="gen_l4_d">Απλές και χειρουργικές εξαγωγές δοντιών και ριζών, καθώς και εγκλείστων φρονιμιτών, με ασφάλεια.</span></div></li>
             </ul>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/222222.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/222222.jpg" alt="Γενική οδοντιατρική"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="1111.jpg"><img src="1111.jpg" alt="Γενική οδοντιατρική"></div>
           <div class="reveal"><p data-i18n="gen_p2">Κάθε θεραπεία ξεκινά με ολοκληρωμένη διάγνωση και προσεκτικό σχεδιασμό. Έτσι, ακόμη και οι πιο απαιτητικές καταστάσεις αντιμετωπίζονται με άνεση και αποτελεσματικότητα, προσφέροντας στοχευμένη φροντίδα προσαρμοσμένη στις ανάγκες σας.</p></div>
         </div>
         <aside class="detail-sidebar">
@@ -818,9 +971,9 @@ section{position:relative}
 </main>
 <main class="page" id="page-aesthetic">
   <section class="detail-hero">
-    <div class="detail-hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/222222.jpg" alt=""></div>
+    <div class="detail-hero-bg"><img src="222222.jpg" alt=""></div>
     <div class="detail-hero-inner">
-      <a class="detail-back" data-route="home"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">Αρχική</span></a>
+      <a class="detail-back" data-route="services"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back_services">Υπηρεσίες</span></a>
       <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="aes_tag">Υπηρεσία 02</span></div>
       <h1 data-i18n="aes_h1">Αισθητική &amp; <em>Προσθετική</em></h1>
     </div>
@@ -838,7 +991,7 @@ section{position:relative}
               <li><span class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div class="li-txt"><strong data-i18n="aes_l2_t">Γέφυρες</strong><span data-i18n="aes_l2_d">Σταθερές αποκαταστάσεις για την αντικατάσταση ελλειπόντων δοντιών με φυσική εμφάνιση.</span></div></li>
             </ul>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg" alt="Προσθετική δοντιών"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="666666.jpg"><img src="666666.jpg" alt="Προσθετική δοντιών"></div>
           <div class="detail-group reveal">
             <div class="detail-group-title"><div class="g-ic"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v3l-2 4h14l-2-4V7a5 5 0 00-5-5z M9 18a3 3 0 006 0"/></svg></div><h3 data-i18n="aes_g2_t">Αποκαταστάσεις επί Εμφυτευμάτων</h3></div>
             <ul class="detail-list">
@@ -872,9 +1025,9 @@ section{position:relative}
 </main>
 <main class="page" id="page-pedo">
   <section class="detail-hero">
-    <div class="detail-hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg" alt=""></div>
+    <div class="detail-hero-bg"><img loading="lazy" decoding="async" src="svc-pedo.jpg" alt=""></div>
     <div class="detail-hero-inner">
-      <a class="detail-back" data-route="home"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">Αρχική</span></a>
+      <a class="detail-back" data-route="services"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back_services">Υπηρεσίες</span></a>
       <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="pedo_tag">Υπηρεσία 03</span></div>
       <h1 data-i18n="pedo_h1"><em>Παιδοδοντιατρική</em></h1>
     </div>
@@ -895,7 +1048,7 @@ section{position:relative}
               <li><span class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div class="li-txt"><strong data-i18n="pedo_l5_t">Εξαγωγή Νεογιλών Δοντιών</strong><span data-i18n="pedo_l5_d">Ανώδυνη εξαγωγή, όταν είναι απαραίτητη, σε ένα ήρεμο περιβάλλον.</span></div></li>
             </ul>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg" alt="Παιδοδοντιατρική"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="1111.jpg"><img src="1111.jpg" alt="Παιδοδοντιατρική"></div>
         </div>
         <aside class="detail-sidebar">
           <div class="sidebar-card reveal-r"><h4 data-i18n="pedo_side_t">Για τα παιδιά μας</h4><p data-i18n="pedo_side_d">Κλείστε το πρώτο ραντεβού του παιδιού σας σε ένα φιλικό και ασφαλές περιβάλλον.</p><a class="sidebar-cta" data-route="contact" data-i18n="side_cta">Επικοινωνία</a></div>
@@ -921,9 +1074,9 @@ section{position:relative}
 </main>
 <main class="page" id="page-face">
   <section class="detail-hero">
-    <div class="detail-hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/44444.jpg" alt=""></div>
+    <div class="detail-hero-bg"><img loading="lazy" decoding="async" src="svc-face.jpg" alt=""></div>
     <div class="detail-hero-inner">
-      <a class="detail-back" data-route="home"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">Αρχική</span></a>
+      <a class="detail-back" data-route="services"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back_services">Υπηρεσίες</span></a>
       <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="face_tag">Εξειδικευμένη Θεραπεία</span></div>
       <h1 data-i18n="face_h1">Αισθητική <em>Προσώπου</em></h1>
     </div>
@@ -937,7 +1090,7 @@ section{position:relative}
             <p data-i18n="face_p1">Η αισθητική προσώπου αξιοποιεί θεραπείες όπως το <strong>Botox</strong> και τα <strong>Dermal Fillers</strong> για να μειώσει τις ρυτίδες, να αποκαταστήσει τον χαμένο όγκο και να χαρίσει μια πιο νεανική όψη. Οι θεραπείες εφαρμόζονται με ακρίβεια, ώστε το αποτέλεσμα να είναι φυσικό και διακριτικό.</p>
             <p data-i18n="face_p2">Στόχος μας δεν είναι η αλλοίωση των χαρακτηριστικών, αλλά η ανάδειξη της μοναδικής ομορφιάς κάθε προσώπου. Με ασφαλείς και επιστημονικά τεκμηριωμένες μεθόδους, η ανανέωση γίνεται απλή και αποτελεσματική.</p>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/44444.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/44444.jpg" alt="Αισθητική προσώπου"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="svc-face.jpg"><img loading="lazy" decoding="async" src="svc-face.jpg" alt="Αισθητική προσώπου"></div>
           <div class="detail-group reveal">
             <h3 data-i18n="face_list_title">Θεραπείες αισθητικής προσώπου</h3>
             <ul class="detail-list">
@@ -971,9 +1124,9 @@ section{position:relative}
 </main>
 <main class="page" id="page-tmj">
   <section class="detail-hero">
-    <div class="detail-hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg" alt=""></div>
+    <div class="detail-hero-bg"><img loading="lazy" decoding="async" src="svc-splint.jpg" alt=""></div>
     <div class="detail-hero-inner">
-      <a class="detail-back" data-route="home"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">Αρχική</span></a>
+      <a class="detail-back" data-route="services"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back_services">Υπηρεσίες</span></a>
       <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="tmj_tag">Εξειδικευμένη Θεραπεία</span></div>
       <h1 data-i18n="tmj_h1">Νάρθηκες &amp; <em>Κροταφογναθική</em></h1>
     </div>
@@ -987,7 +1140,7 @@ section{position:relative}
             <p data-i18n="tmj_p1">Οι νάρθηκες και η αντιμετώπιση των κροταφογναθικών διαταραχών αποτελούν μια ειδική θεραπεία που στοχεύει στην προστασία των δοντιών και στην ανακούφιση προβλημάτων, όπως το τρίξιμο (βρουξισμός) ή ο πόνος στις αρθρώσεις.</p>
             <p data-i18n="tmj_p2">Με ολοκληρωμένη διάγνωση και προσεκτικό σχεδιασμό, μπορούμε να διαχειριστούμε δύσκολες καταστάσεις με άνεση και αποτελεσματικότητα. Έτσι, κάθε ασθενής απολαμβάνει στοχευμένη φροντίδα, προσαρμοσμένη στις ανάγκες του.</p>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg" alt="Νάρθηκες"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="svc-splint.jpg"><img loading="lazy" decoding="async" src="svc-splint.jpg" alt="Νάρθηκες"></div>
           <div class="detail-group reveal">
             <h3 data-i18n="tmj_list_title">Πώς βοηθάμε</h3>
             <ul class="detail-list">
@@ -1020,9 +1173,9 @@ section{position:relative}
 </main>
 <main class="page" id="page-surgery">
   <section class="detail-hero">
-    <div class="detail-hero-bg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg" alt=""></div>
+    <div class="detail-hero-bg"><img loading="lazy" decoding="async" src="svc-surgery.jpg" alt=""></div>
     <div class="detail-hero-inner">
-      <a class="detail-back" data-route="home"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">Αρχική</span></a>
+      <a class="detail-back" data-route="services"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back_services">Υπηρεσίες</span></a>
       <div class="detail-hero-tag"><span class="dot"></span><span data-i18n="surg_tag">Ειδικές Θεραπείες</span></div>
       <h1 data-i18n="surg_h1">Ειδικές <em>Θεραπείες</em></h1>
     </div>
@@ -1040,7 +1193,7 @@ section{position:relative}
               <li><span class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div class="li-txt"><strong data-i18n="surg_l2_t">Εξαγωγές Εγκλείστων Φρονιμιτών</strong><span data-i18n="surg_l2_d">Χειρουργική αφαίρεση εγκλείστων και ημιεγκλείστων σωφρονιστήρων (φρονιμιτών).</span></div></li>
             </ul>
           </div>
-          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg" alt="Χειρουργική στόματος"></div>
+          <div class="detail-img-feature reveal-scale lightbox-trigger" data-img="55555.jpg"><img src="55555.jpg" alt="Χειρουργική στόματος"></div>
           <div class="reveal"><p data-i18n="surg_p2">Με σύγχρονο εξοπλισμό και αυστηρή τήρηση των κανόνων υγιεινής, ακόμη και οι πιο απαιτητικές μικροεπεμβάσεις αντιμετωπίζονται με επιτυχία — τόσο ιατρικά όσο και ανθρώπινα.</p></div>
         </div>
         <aside class="detail-sidebar">
@@ -1074,10 +1227,10 @@ section{position:relative}
         <p data-i18n="clinic_sub">Το ιατρείο μας είναι σχεδιασμένο με γνώμονα την άνεση και την ασφάλεια του ασθενή, εξοπλισμένο με μηχανήματα τελευταίας τεχνολογίας.</p>
       </div>
       <div class="clinic-gallery reveal-scale">
-        <div class="clinic-item c-big lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/666666.jpg" alt="Χώρος ιατρείου"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap1">Χώρος υποδοχής</div></div>
-        <div class="clinic-item c-tall lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/1111.jpg" alt="Οδοντιατρική έδρα"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap2">Οδοντιατρική έδρα</div></div>
-        <div class="clinic-item c-wide lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/222222.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/222222.jpg" alt="Χώρος θεραπείας"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap3">Χώρος θεραπείας</div></div>
-        <div class="clinic-item c-sm lightbox-trigger" data-img="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg"><img src="https://raw.githubusercontent.com/agelmet/TSIALIAFA/15364b6a635c0d1e9327d587a8392f84a9c9b374/55555.jpg" alt="Σύγχρονος εξοπλισμός"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap4">Σύγχρονος εξοπλισμός</div></div>
+        <div class="clinic-item c-big lightbox-trigger" data-img="33333.jpg"><img src="33333.jpg" alt="Χώρος ιατρείου"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap1">Χώρος υποδοχής</div></div>
+        <div class="clinic-item c-tall lightbox-trigger" data-img="666666.jpg"><img src="666666.jpg" alt="Οδοντιατρική έδρα"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap2">Οδοντιατρική έδρα</div></div>
+        <div class="clinic-item c-wide lightbox-trigger" data-img="44444.jpg"><img src="44444.jpg" alt="Χώρος θεραπείας"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap3">Χώρος θεραπείας</div></div>
+        <div class="clinic-item c-sm lightbox-trigger" data-img="55555.jpg"><img src="55555.jpg" alt="Σύγχρονος εξοπλισμός"><div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div><div class="cap" data-i18n="clinic_cap4">Σύγχρονος εξοπλισμός</div></div>
       </div>
       <div class="clinic-features">
         <div class="clinic-feat reveal"><div class="cf-ic"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5c0 2-1 3-1 5H8c0-2-1-3-1-5a5 5 0 015-5zM9 17h6M10 21h4"/></svg></div><div><h5 data-i18n="cf1_t">Σύγχρονη Τεχνολογία</h5><p data-i18n="cf1_d">Εργονομικές έδρες τελευταίας τεχνολογίας και ψηφιακή ακτινογραφία για ακριβή διάγνωση με χαμηλή ακτινοβολία.</p></div></div>
@@ -1185,7 +1338,7 @@ section{position:relative}
     <div class="footer-top">
       <div class="footer-brand">
         <div class="f-logo">
-          <img src="https://github.com/agelmet/TSIALIAFA/blob/main/IMG_4558.png?raw=true" alt="Τσιαλιάφα Dental Care" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="IMG_4558.png" alt="Τσιαλιάφα Dental Care" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="f-logo-fallback" style="display:none">
             <svg class="f-mark" viewBox="0 0 60 60"><path d="M30 8 C22 8 18 14 18 22 C18 34 24 44 30 52 C36 44 42 34 42 22 C42 14 38 8 30 8 Z" fill="none" stroke="#cdbfa9" stroke-width="1.5"/><circle cx="30" cy="26" r="6" fill="none" stroke="#cdbfa9" stroke-width="1.5"/></svg>
             <div class="f-name">Τσιαλιάφα<span>Dental Care</span></div>
@@ -1216,6 +1369,7 @@ section{position:relative}
       <div class="footer-col">
         <h5 data-i18n="footer_serv">Υπηρεσίες</h5>
         <ul>
+          <li><a data-route="services" data-i18n="all_services_short">Όλες οι υπηρεσίες</a></li>
           <li><a data-route="general" data-i18n="sc1_title">Γενική Οδοντιατρική</a></li>
           <li><a data-route="aesthetic" data-i18n="sc2_title">Αισθητική &amp; Προσθετική</a></li>
           <li><a data-route="pedo" data-i18n="sc3_title">Παιδοδοντιατρική</a></li>
@@ -1322,7 +1476,12 @@ function reviewCardHTML(r){
 /* ============ I18N ============ */
 const I18N = {
   en:{
-    nav_home:"Home", nav_about:"Profile", nav_services:"Services", nav_clinic:"Clinic", nav_reviews:"Reviews", nav_contact:"Contact", nav_cta:"Book Appointment",
+    nav_home:"Home", nav_about:"Profile", nav_services:"Services", all_services:"See all services", back_services:"Services", all_services_short:"All services",
+    svc_tag:"Services", svc_h1:"Complete <em>dental care</em>", svc_pick:"Choose a service", svc_index_title:"Six areas, <em>one philosophy</em>",
+    svc_index_sub:"Each service has its own page with a full description. Choose the area you are interested in to learn more.",
+    svc_cta_eyebrow:"Not sure which one?", svc_cta_title:"Let's find the <em>right treatment</em> together", svc_cta_sub:"A complete clinical assessment is the first step. Get in touch and we will design the plan that suits your case.",
+    about_implant:"She received additional training in <strong>implant surgery</strong> at the Clinic of Oral and Maxillofacial Surgery of the <strong>Aristotle University of Thessaloniki</strong>.",
+    tag6:"Implant Surgery, AUTh", side_f5:"Training in implant surgery (AUTh)", nav_clinic:"Clinic", nav_reviews:"Reviews", nav_contact:"Contact", nav_cta:"Book Appointment",
     hero_eyebrow:"Dentist · Prosthodontist · Alexandroupoli", hero_t1:"Dr. Eleni", hero_t2:"Tsialiafa", hero_role:"DDS, MSc — Oral Surgeon",
     hero_desc:"Specialized aesthetic dentistry and prosthetics of the highest standard, with painless treatments and genuine human care in the heart of Alexandroupoli.",
     hero_cta1:"Our Services", hero_cta2:"Book Appointment", badge1:"Top of Class AUTh", badge2:"Prosthetics", badge3:"Member", scroll:"Scroll",
@@ -1456,6 +1615,7 @@ const I18N = {
 /* ============ APP LOGIC ============ */
 (function(){
   const pages = document.querySelectorAll('.page');
+  const BASE_TITLE = document.title;
   const navLinks = document.querySelectorAll('.nav-link');
 
   function showPage(id, push){
@@ -1463,7 +1623,12 @@ const I18N = {
     if(!target){return;}
     pages.forEach(p=>p.classList.remove('is-active'));
     target.classList.add('is-active');
-    navLinks.forEach(l=>l.classList.toggle('active', l.dataset.route===id));
+    const SERVICE_ROUTES=['services','general','aesthetic','pedo','face','tmj','surgery'];
+    navLinks.forEach(l=>{
+      const r=l.dataset.route;
+      l.classList.toggle('active', r===id || (r==='services' && SERVICE_ROUTES.indexOf(id)>-1));
+    });
+    document.title = (id==='home') ? BASE_TITLE : (target.querySelector('h1')?.textContent.trim()+' | '+BASE_TITLE);
     if(push!==false){history.pushState({page:id},'','#'+id);}
     window.scrollTo({top:0,behavior:'instant'});
     setTimeout(initReveals, 60);
